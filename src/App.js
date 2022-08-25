@@ -1,7 +1,7 @@
 import File from './components/File';
 import './App.css';
 import {Routes, Route } from "react-router-dom"
-import Done from './components/Done'
+
 
 function App() {
   return (
@@ -9,7 +9,6 @@ function App() {
       <header className="App-header">
 <Routes>
 <Route path='/' element= {<File />} />
-  <Route path='done' element= {<Done />} />
 </Routes>
 
        
