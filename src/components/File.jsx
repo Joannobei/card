@@ -14,7 +14,7 @@ function File() {
     const { isSubmitSuccessful, isValid } = formState
     const [month, setMonth] = useState('00')
     const [number, setnumber] = useState('0000 0000 0000 0000')
-    const [name, setName] = useState('JOAN NOBEI')
+    const [name, setName] = useState('JANE APPLEASEED')
     const [year, setYear] = useState('00')
     const [CVC, setCVC] = useState('000')
     const navigate = useNavigate()
@@ -68,7 +68,7 @@ function File() {
 
 
             <div className='flex  m-auto justify-center items-center'  >
-
+                
                 <form className='lg:ml-[10rem] lg:w-[30rem] md:w-[35rem]  w-[23rem] mt-[5rem] md:mt-[8rem] lg:mt-0 m-auto            ' onSubmit={handleSubmit(onSubmit)} action="">
                     {isSubmitSuccessful ? (
                         <div className=" m-auto w-[23rem] text-center ">
@@ -83,150 +83,150 @@ function File() {
 
 
                     ) : <div><label>CARDHOLDER NAME</label>
-                        <div className="my-4">
-                            <input style={{ border: errors.Card_name ? '1px solid #e03434' : '' }}
-                                type="text"
-                                placeholder="e.g Jane Appleseed"
-                                className="outline-none w-full  rounded-lg h-[56px] px-5 bg-[#F6F4FF] "
-                                {...register("Card_name", {
-                                    required: {
-                                        value: true,
-                                        message: 'Can not be blank'
-                                    },
-                                })}
-                            />
-                            {errors.Card_name && (
-                                <p className="text-[#e03434] text-sm">{errors.Card_name.message}</p>
-                            )}
-                        </div>
+                    <div className="my-4">
+                        <input style={{ border: errors.Card_name ? '1px solid #e03434' : '' }}
+                            type="text"
+                            placeholder="e.g Jane Appleseed"
+                            className="outline-none w-full  rounded-lg h-[56px] px-5 bg-[#F6F4FF] "
+                            {...register("Card_name", {
+                                required: {
+                                    value: true,
+                                    message: 'Can not be blank'
+                                },
+                            })}
+                        />
+                        {errors.Card_name && (
+                            <p className="text-[#e03434] text-sm">{errors.Card_name.message}</p>
+                        )}
+                    </div>
 
 
-                        <div className="w">
+                    <div className="w">
 
-                        </div>
-                        <label>CARD NUMBER</label>
+                    </div>
+                    <label>CARD NUMBER</label>
+                    
+                    <div className="my-4 ">
+                    {/* <NumberFormat /> */}
+                        <input style={{ border: errors.Card_number ? '1px solid #e03434' : '' }}
+                            type="tel" format='#### #### #### ####' 
+                            placeholder="e.g 1234 5678 9123 0000" maxLength="19"
+                            className="outline-none w-full rounded-lg h-[56px] px-5 bg-[#F6F4FF] "
+                            {...register("Card_number", {
+                                required: {
+                                    value: true,
+                                    message: 'Can not be blank'
+                                },
+                                message: 'Can not be blank',
+                                pattern: {
+                                    value: /\d{4}\s\d{4}\s\d{4}\s\d{4}/,
+                                    message: 'Wrong Format'
+                                }
+                            })}
+                        /> 
+                        {errors.Card_number && (
+                            <p className="text-[#e03434] text-sm">{errors.Card_number.message}</p>
+                        )}
 
-                        <div className="my-4 ">
-                            {/* <NumberFormat /> */}
-                            <input style={{ border: errors.Card_number ? '1px solid #e03434' : '' }}
-                                type="tel" format='#### #### #### ####'
-                                placeholder="e.g 1234 5678 9123 0000" maxLength="17"
-                                className="outline-none w-full rounded-lg h-[56px] px-5 bg-[#F6F4FF] "
-                                {...register("Card_number", {
-                                    required: {
-                                        value: true,
-                                        message: 'Can not be blank'
-                                    },
-                                    message: 'Can not be blank',
-                                    pattern: {
-                                        value: /^(.{4})(.{4})(.{4})(.*)$/,
-                                        message: 'Please input the correct format'
-                                    }
-                                })}
-                            />
-                            {errors.Card_number && (
-                                <p className="text-[#e03434] text-sm">{errors.Card_number.message}</p>
-                            )}
-
-                        </div>
-
-
-
-                        <div className=" flex justify-between">
-
-                            <div className="date w-[10rem] md:w-[13rem] lg:w-[12rem]">
-                                <div>
-                                    <label>EXP. DATE (MM/YY) </label>
-                                </div>
-                                <div className="flex justify-between ">
-                                    <div className="my-2 ">
-                                        <input style={{ border: errors.month ? '1px solid #e03434' : '' }}
-                                            type="tel"
-                                            placeholder="MM"
-                                            className="outline-none w-[4.5rem] md:w-[6rem] lg:w-[5.5rem] rounded-lg h-[46px] px-5 bg-[#F6F4FF] "
-                                            {...register("month", {
-                                                required: {
-                                                    value: true,
-                                                    message: 'Can not be blank'
-                                                },
-                                                pattern: {
-                                                    value: /^(0[1-9]|1[0-2])$/i,
-                                                    message: 'Please input the correct format'
-                                                }
-                                            })}
-                                        />
-                                        {errors.month && (
-                                            <p className="text-[#e03434] text-sm">{errors.month.message}</p>
-                                        )}
-                                    </div>
-
-                                    <div className="my-2 ml-[3px]">
-                                        <input style={{ border: errors.year ? '1px solid #e03434' : '' }}
-                                            type="tel"
-                                            placeholder="YY"
-                                            className="outline-none w-[4.5rem] md:w-[6rem] lg:w-[5.5rem]  rounded-lg h-[46px] px-5 bg-[#F6F4FF] "
-                                            {...register("year", {
-                                                required: {
-                                                    value: true,
-                                                    message: 'Can not be blank'
-                                                },
-                                                pattern: {
-                                                    value: /^[0-9]{2}$/i,
-                                                    message: 'Please input the correct format'
-                                                }
-                                            })}
-                                        />
-                                        {errors.year && (
-                                            <p className="text-[#e03434] text-sm">{errors.year.message}</p>
-                                        )}
-                                    </div>
+                    </div> 
 
 
-                                </div>
 
-                            </div>
+                    <div className=" flex justify-between">
 
-
+                        <div className="date w-[10rem] md:w-[13rem] lg:w-[12rem]">
                             <div>
-                                <div>
-                                    <label>cvc</label>
-                                </div>
-                                <div className="my-2">
-                                    <input style={{ border: errors.CVC ? '1px solid #e03434' : '' }}
+                                <label>EXP. DATE (MM/YY) </label>
+                            </div>
+                            <div className="flex justify-between ">
+                                <div className="my-2 ">
+                                    <input style={{ border: errors.month ? '1px solid #e03434' : '' }}
                                         type="tel"
-                                        placeholder="e.g 123"
-                                        className="outline-none w-[11.5rem] md:w-[20rem] lg:w-[16.2rem]  rounded-lg h-[46px] px-5 bg-[#F6F4FF] "
-                                        {...register("CVC", {
+                                        placeholder="MM"
+                                        className="outline-none w-[4.5rem] md:w-[6rem] lg:w-[5.5rem] rounded-lg h-[46px] px-5 bg-[#F6F4FF] "
+                                        {...register("month", {
                                             required: {
                                                 value: true,
                                                 message: 'Can not be blank'
                                             },
                                             pattern: {
-                                                value: /^[1-9]{3}$/i,
+                                                value: /^(0[1-9]|1[0-2])$/i,
                                                 message: 'Please input the correct format'
                                             }
                                         })}
                                     />
-                                    {errors.CVC && (
-                                        <p className="text-[#e03434] text-sm">{errors.CVC.message}</p>
+                                    {errors.month && (
+                                        <p className="text-[#e03434] text-sm">{errors.month.message}</p>
                                     )}
                                 </div>
+
+                                <div className="my-2 ml-[3px]">
+                                    <input style={{ border: errors.year ? '1px solid #e03434' : '' }}
+                                        type="tel"
+                                        placeholder="YY"
+                                        className="outline-none w-[4.5rem] md:w-[6rem] lg:w-[5.5rem]  rounded-lg h-[46px] px-5 bg-[#F6F4FF] "
+                                        {...register("year", {
+                                            required: {
+                                                value: true,
+                                                message: 'Can not be blank'
+                                            },
+                                            pattern: {
+                                                value: /^[0-9]{2}$/i,
+                                                message: 'Please input the correct format'
+                                            }
+                                        })}
+                                    />
+                                    {errors.year && (
+                                        <p className="text-[#e03434] text-sm">{errors.year.message}</p>
+                                    )}
+                                </div>
+
 
                             </div>
 
                         </div>
 
 
+                        <div>
+                            <div>
+                                <label>cvc</label>
+                            </div>
+                            <div className="my-2">
+                                <input style={{ border: errors.CVC ? '1px solid #e03434' : '' }}
+                                    type="tel"
+                                    placeholder="e.g 123"
+                                    className="outline-none w-[11.5rem] md:w-[20rem] lg:w-[16.2rem]  rounded-lg h-[46px] px-5 bg-[#F6F4FF] "
+                                    {...register("CVC", {
+                                        required: {
+                                            value: true,
+                                            message: 'Can not be blank'
+                                        },
+                                        pattern: {
+                                            value: /^[1-9]{3}$/i,
+                                            message: 'Please input the correct format'
+                                        }
+                                    })}
+                                />
+                                {errors.CVC && (
+                                    <p className="text-[#e03434] text-sm">{errors.CVC.message}</p>
+                                )}
+                            </div>
+
+                        </div>
+
+                    </div>
+                   
 
 
-                        <input
-                            className='w-full h-[3rem] rounded-lg mt-7 bg-[#212121] text-white text-center'
-                            type="submit" value="Confirm" /></div>}
 
+                    <input
+                        className='w-full h-[3rem] rounded-lg mt-7 bg-[#212121] text-white text-center'
+                        type="submit" value="Confirm" /></div>}
+                    
 
-
+                    
                 </form>
-
+                
             </div>
 
 

@@ -16,8 +16,8 @@ function Front({number, name, month, year}) {
         {number}
       </div>
       <div className=" flex justify-between lg:text-base text-xs w-[15rem] md:w-[23.6rem] m-auto  text-center text-white absolute  inset-x-0 md:bottom-6 bottom-5  ">
-        <p className=''> {name}</p>
-        <p className=''> {'00' && month}/{'00' && year}</p>
+        <p className='uppercase'> {name}</p>
+        <p className=''>  {month}/{year}</p>
       </div>
     </div>
   )
