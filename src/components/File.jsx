@@ -151,7 +151,7 @@ function File() {
                                             },
                                             pattern: {
                                                 value: /^(0[1-9]|1[0-2])$/i,
-                                                message: 'Please input the correct format'
+                                                message: 'Wrong format'
                                             }
                                         })}
                                     />
@@ -172,7 +172,7 @@ function File() {
                                             },
                                             pattern: {
                                                 value: /^[0-9]{2}$/i,
-                                                message: 'Please input the correct format'
+                                                message: 'Wrong format'
                                             }
                                         })}
                                     />
@@ -203,7 +203,7 @@ function File() {
                                         },
                                         pattern: {
                                             value: /^[1-9]{3}$/i,
-                                            message: 'Please input the correct format'
+                                            message: 'Wrong format'
                                         }
                                     })}
                                 />
