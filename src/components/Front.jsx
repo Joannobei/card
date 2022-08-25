@@ -12,7 +12,7 @@ function Front({number, name, month, year}) {
       </div>
 
 
-      <div className=" text-center tracking-[0.1rem] md:tracking-[0.31rem] text-white absolute md:w-[24rem] w-[17rem] m-auto md:bottom-16 bottom-12 inset-x-0 md:text-[1.9rem] text-[1.4rem]  ">
+      <div className=" text-center  md:tracking-[0.1rem] text-white absolute md:w-[23rem] w-[16rem] m-auto md:bottom-16 bottom-12 inset-x-0 md:text-[1.9rem] text-[1.4rem]  ">
         {number}
       </div>
       <div className=" flex justify-between lg:text-base text-xs w-[15rem] md:w-[23.6rem] m-auto  text-center text-white absolute  inset-x-0 md:bottom-6 bottom-5  ">

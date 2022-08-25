@@ -5,7 +5,7 @@ import {Routes, Route } from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
+    <div className="App font-Grotesk">
       <header className="App-header">
 <Routes>
 <Route path='/' element= {<File />} />

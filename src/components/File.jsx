@@ -189,7 +189,7 @@ function File() {
 
                         <div>
                             <div>
-                                <label>cvc</label>
+                                <label>CVC</label>
                             </div>
                             <div className="my-2">
                                 <input style={{ border: errors.CVC ? '1px solid #e03434' : '' }}
